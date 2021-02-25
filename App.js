@@ -13,6 +13,11 @@ class App extends React.Component{
         <Text>Hello World</Text>
         <Text>Hello World</Text>
         <Text>Hello World</Text>
+        <Text>Hello World</Text>
+        <Text>Hello World</Text>
+        <Text>Hello World</Text>
+        <Text>Hello World</Text>
+        <Text>Hello World</Text>
       </View>
     )
   }
