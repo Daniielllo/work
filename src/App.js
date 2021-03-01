@@ -39,8 +39,13 @@ class App extends React.Component {
             >
                 {/* {this.state.count <= 20 && (<Counter count={this.state.count}/>)} */}
                 {/* <Counter count={this.state.count} />
-                {this.state.count <= 20 && (<Button increacse={this.increacse1}/>)} 
-                {this.state.count >= 20 && (<Button increacse={this.increacse2}/>)} */}
+                {this.state.count <= 20 && (<Button increacse={this.increacse1}/>)}
+                {this.state.count >= 20 && 
+                <> 
+                    <Button increacse={this.increacse2}/>
+                </>
+                }
+                */}
                 <Text>Name</Text>
                 <TextInput value={this.state.Name} onChangeText={Name => this.setState({Name})}/>
                 <Text>Age</Text>
