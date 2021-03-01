@@ -1,18 +1,34 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-import Button from "./component/Button";
+import { View, Text, TextInput } from "react-native";
+import {Button, ButtonDone} from "./component/Button";
 import Counter from "./component/Counter";
 
 class App extends React.Component {
     state = {
-        count: 0
+        Name: "Start",
+        Age: 1,
+        temp: false
     }
 
-    increacse = () => {
-        this.setState({count: this.state.count + 3})
+    // increacse1 = () => {
+    //     this.setState({count: this.state.count + 3})
+    // }
+    // increacse2 = () => {
+    //     this.setState({count: this.state.count * 2})
+    // }
+    updatePeople = () => {
+        this.setState({temp: true})
     }
+
+    
 
     render() {
+        console.log(this.state.count)
+        if (this.state.temp) {
+            return (
+                <Text>{this.state.Name}, {this.state.Age}</Text>
+            )
+        }
         return (
             <View
                 style={{
@@ -21,8 +37,15 @@ class App extends React.Component {
                     alignItems: "center"
                 }}
             >
-                <Counter count={this.state.count} />
-                <Button increacse={this.increacse} />
+                {/* {this.state.count <= 20 && (<Counter count={this.state.count}/>)} */}
+                {/* <Counter count={this.state.count} />
+                {this.state.count <= 20 && (<Button increacse={this.increacse1}/>)} 
+                {this.state.count >= 20 && (<Button increacse={this.increacse2}/>)} */}
+                <Text>Name</Text>
+                <TextInput value={this.state.Name} onChangeText={Name => this.setState({Name})}/>
+                <Text>Age</Text>
+                <TextInput value={this.state.Age} onChangeText={Age => this.setState({Age})}/>
+                <ButtonDone updatePeople={this.updatePeople}/>
             </View>
         )
     }
