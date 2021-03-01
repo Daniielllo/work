@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import Button from "./component/Button";
+import Counter from "./component/Counter";
 
 class App extends React.Component {
     state = {
