@@ -5,8 +5,8 @@ import Counter from "./component/Counter";
 
 const styles = StyleSheet.create({
     picture:{
-        width:100,
-        height:100,
+        width:'50%',
+        height:'100%',
     },
 });
 
@@ -44,8 +44,8 @@ class App extends React.Component {
             <View
                 style={{
                     flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center"
+                    alignSelf:"center",
+                    justifyContent:"space-around"
                 }}
             >
                 {/* {this.state.count <= 20 && (<Counter count={this.state.count}/>)} */}
@@ -74,24 +74,13 @@ class App extends React.Component {
                     source={{uri: picture[this.state.count]}}
                 /> 
                 {this.state.count > 0 && <ButtonPrev 
-                    style={
-                        {
-                            flex: 0,
-                            justifyContent: "space-between",
-                            alignItems: "center"
-                        }
-                    }
                     decreacse={this.decreacse}
                 />
                 }
                 {this.state.count < 4 && <ButtonNext 
-                    style={
-                        {
-                            flex: 0,
-                            justifyContent: "space-between",
-                            alignItems: "center"
-                        }
-                    }
+                    style={{
+                        alignContent:"center"
+                    }}
                     increacse={this.increacse}
                 
                 />
