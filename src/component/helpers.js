@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { Dimensions } from 'react-native';
 
-const windowWidth = Dimensions.get('window').width;
+const windowWidth = Dimensions.get('window').width * 0.98;
 
 export const Item = ({ url, title, id }) => (
     <View>
@@ -11,6 +11,7 @@ export const Item = ({ url, title, id }) => (
                 {
                     width: windowWidth,
                     height: 300,
+                    borderRadius:40
                 }
             }
             source={{ uri: url }} />
@@ -26,11 +27,6 @@ export const Item = ({ url, title, id }) => (
 );
 
 export const renderItem = ({ item }) => (
-    <Item url={item.url} title={item.title} />
-);
 
-export const OnClick = ({ check }) =>(
-    <View>
-        <Text>{check}</Text>
-    </View>
+    <Item url={item.url} title={item.title} />
 );
