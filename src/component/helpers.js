@@ -29,4 +29,8 @@ export const Item = ({ url, title, id }) => (
 export const renderItem = ({ item }) => (
 
     <Item url={item.url} title={item.title} />
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 9deb5fcc7772fadb6a264fe02010492a71a1cb0f
