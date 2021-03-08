@@ -1,19 +1,31 @@
-import react from "react"
-import { TextInput } from "react-native";
+import React from 'react';
+import { TextInput, View } from "react-native";
+import { ButtonSeed } from "./supporters/ButtonSeed"
+
+const tempText = [""]
 
 class Footer extends React.Component {
 
-
     render() {
+        const { Send } = this.props
+
         return (
-            <TextInput
-                style={{ height: 40,
-                     width: 100,
-                     borderColor: '#000000',
-                     borderWidth: 1 }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
-            />
+
+            <View style={{
+                justifyContent: "space-between",
+                alignItems: "flex-start"
+            }}>
+                <TextInput
+                    style={{
+                        height: 40,
+                        width: 100,
+                        borderColor: '#000000',
+                        borderWidth: 1,
+                    }}
+                    onChangeText={text => tempText[0] = text}
+                />
+                <ButtonSeed Send={Send} Text={tempText} />
+            </View>
         )
     }
 }
