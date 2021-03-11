@@ -3,7 +3,7 @@ import { TextInput, View, Dimensions, ScrollView } from "react-native";
 import CheckButton from './supporters/CheckButton';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height * 0.7;
+const windowHeight = Dimensions.get('window').height;
 
 const tempText = [""]
 
@@ -18,18 +18,23 @@ class Footer extends React.Component {
                 height: 150,
                 width: windowWidth,
                 position: "absolute",
-                top: windowHeight,
+                top: windowHeight * 0.87,
+                backgroundColor:"green",
+                paddingTop:15
             }}>
+                <View style={{paddingLeft:windowWidth*0.13 , paddingRight:10}}>
                 <TextInput
                     style={{
-                        height: 40,
+                        height: 50,
                         width: 230,
                         borderColor: '#000000',
                         borderWidth: 1,
                     }}
                     onChangeText={text => tempText[0] = text}
                 />
+                </View>
                 <CheckButton style={{}} Send={Send} Text={tempText} />
+                
             </ScrollView>
         )
     }
