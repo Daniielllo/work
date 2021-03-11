@@ -22,7 +22,7 @@ class Footer extends React.Component {
                 backgroundColor:"green",
                 paddingTop:15
             }}>
-                <View style={{paddingLeft:windowWidth*0.13 , paddingRight:10}}>
+                <View style={{paddingLeft:windowWidth*0.13 , paddingRight:10, opacity: 1,}}>
                 <TextInput
                     style={{
                         height: 50,
