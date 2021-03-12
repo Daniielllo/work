@@ -5,10 +5,9 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export const Item = ({ line }) => (
-    <View style={{height:windowHeight*0.13, width:windowWidth}}>
+    <View style={{height:windowHeight*0.12, width:windowWidth}}>
         <TouchableOpacity style={{
             padding: 30,
-            // top:-10,
             top:80,
             backgroundColor: "#ffcc00",
             color: "#ffffff"

@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import Footer from "./component/Footer";
 import ScrollDown from './component/ScrollDown';
 
-const temp = [1]
+let mass = []
 
 class App extends React.Component {
     state = {
@@ -30,57 +30,63 @@ class App extends React.Component {
                 id: 3
             },
             {
-                line: "___________",
+                line: "___________5",
                 byed: false,
                 id: 4
             },
             {
-                line: "___________",
+                line: "___________6",
                 byed: false,
                 id: 5
             },
             {
-                line: "___________",
+                line: "___________7",
                 byed: false,
                 id: 6
             },
             {
-                line: "___________",
+                line: "___________8",
                 byed: false,
                 id: 7
             },
-            {
-                line: "___________",
-                byed: false,
-                id: 8
-            },
-            {
-                line: "___________",
-                byed: false,
-                id: 9
-            },
-            {
-                line: "___________",
-                byed: false,
-                id: 10
-            },
-            {
-                line: "___________",
-                byed: false,
-                id: 11
-            },
-            {
-                line: "___________",
-                byed: false,
-                id: 12
-            },
-        ]
+            // {
+            //     line: "___________9",
+            //     byed: false,
+            //     id: 8
+            // },
+            // {
+            //     line: "___________10",
+            //     byed: false,
+            //     id: 9
+            // },
+            // {
+            //     line: "___________11",
+            //     byed: false,
+            //     id: 10
+            // }
+        ],
+        size: -1,
+        temptext: {
+            line: "",
+            byed: false,
+            id: 0
+        },
     }
-    
-    Send = (TextInput) =>{
-        this.state.main[0]++
-        // temp[0] = main[0]
-        // this.state.main[temp[0]] = TextInput
+
+    ChangeText = (text) => {
+        this.setState({temptext: {
+            line:text,
+            byed: false,
+            id:this.state.size + 1
+        } })
+    }
+
+    Send = () =>{
+        const { main, temptext }  = this.state
+        mass = main
+        this.setState({size: this.state.size + 1})
+        mass[this.state.size + 1] = temptext
+        this.setState({main: mass})
     }
     
 
@@ -89,7 +95,7 @@ class App extends React.Component {
         return (
             <View style={{ justifyContent: "center", alignItems: "center", flex:1}}>
                 <ScrollDown mass={this.state.main}/>
-                <Footer Send={this.Send}/>
+                <Footer Send={this.Send} ChangeText={this.ChangeText}/>
             </View>
         )
     }

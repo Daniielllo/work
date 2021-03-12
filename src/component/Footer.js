@@ -1,16 +1,15 @@
 import React from 'react';
-import { TextInput, View, Dimensions, ScrollView } from "react-native";
+import { TextInput, View, Dimensions, ScrollView, Text } from "react-native";
 import CheckButton from './supporters/CheckButton';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const tempText = [""]
 
 class Footer extends React.Component {
 
     render() {
-        const { Send } = this.props
+        const { Send, ChangeText } = this.props
 
         return (
 
@@ -18,7 +17,7 @@ class Footer extends React.Component {
                 height: 150,
                 width: windowWidth,
                 position: "absolute",
-                top: windowHeight * 0.87,
+                top: windowHeight * 0.847,
                 backgroundColor:"green",
                 paddingTop:15
             }}>
@@ -30,10 +29,11 @@ class Footer extends React.Component {
                         borderColor: '#000000',
                         borderWidth: 1,
                     }}
-                    onChangeText={text => tempText[0] = text}
+                    onChangeText={ChangeText}
                 />
                 </View>
-                <CheckButton style={{}} Send={Send} Text={tempText} />
+                <CheckButton Send={Send} />
+
                 
             </ScrollView>
         )
