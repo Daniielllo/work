@@ -12,7 +12,7 @@ const windowWidth = Dimensions.get('window').width;
 //             backgroundColor: "#ffcc00",
 //             color: "#ffffff",
 
-//         }} onPress={() => { Buy(item.id) }}>
+//         }} onPress={() => {  }}>
 //             <Text style={{ textDecorationLine: item.byed == true ? "line-through" : "none" }}>{item.line}</Text>
 //         </TouchableOpacity>
 
@@ -25,8 +25,15 @@ const windowWidth = Dimensions.get('window').width;
 
 class ScrollDown extends React.Component {
 
+
+    // componentDidUpdate () {
+
+    // }
+
+
     render() {
         const { mass, Buy } = this.props
+
         return (
             <ScrollView style={{ bottom: windowHeight * 0.10 }}>
                 {
@@ -38,7 +45,7 @@ class ScrollDown extends React.Component {
                                 backgroundColor: "#ffcc00",
                                 color: "#ffffff",
 
-                            }} onPress={Buy(item.id)}>
+                            }} >
                                 <Text style={{
                                     textDecorationLine: item.byed == "true" ? "line-through" : "none"
                                 }}>

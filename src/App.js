@@ -5,7 +5,7 @@ import ScrollDown from './component/ScrollDown';
 
 let mass = []
 
-let tempom = {}
+let tempom = ""
 
 class App extends React.Component {
     state = {
@@ -70,6 +70,9 @@ class App extends React.Component {
         })
     }
 
+
+
+
     Buy = (itemId) => {
         const { main } = this.state
         mass = main
@@ -95,6 +98,9 @@ class App extends React.Component {
         this.setState({ main: mass })
     }
 
+
+
+
     Send = () => {
         const { main, temptext } = this.state
         mass = main
@@ -106,9 +112,9 @@ class App extends React.Component {
             })
 
         }
-        this.setState({ size: this.state.size + 1 })
+        // this.setState({ size: this.state.size + 1 })
         mass[this.state.size + 1] = temptext
-        this.setState({ main: mass })
+        // this.setState({ main: mass })
     }
 
 
@@ -116,8 +122,8 @@ class App extends React.Component {
     render() {
         return (
             <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-                <ScrollDown mass={this.state.main} Buy={this.Buy} />
-                <Footer Send={this.Send} ChangeText={this.ChangeText} />
+                <ScrollDown mass={this.state.main} Buy={this.state.Buy}/>
+                <Footer Send={this.Send} ChangeText={this.ChangeText} /> 
             </View>
         )
     }
