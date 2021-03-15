@@ -73,29 +73,29 @@ class App extends React.Component {
 
 
 
-    Buy = (itemId) => {
-        const { main } = this.state
-        mass = main
-        let leto = mass.find(item => item.id == itemId)
+    Buy = (newItem) => {
+        // const { main } = this.state
+        // mass = main
+        // let leto = mass.find(item => item.id == newItem.id )
         
-        mass[leto] = tempom
+        // mass[leto] = tempom
 
-        if (mass[leto]["byed"] == "false"){
-            tempom = {
-                line: "__________",
-                byed: "true",
-                id: 0
-            }
-        }
-        else
-        {
-            tempom = {
-                line: "__________",
-                byed: "false",
-                id: 0
-            }
-        }
-        this.setState({ main: mass })
+        // if (mass[leto]["byed"] == "false"){ 
+        //     tempom = {
+        //         line: "__________",
+        //         byed: "true",
+        //         id: 0
+        //     }
+        // }
+        // else
+        // {
+        //     tempom = {
+        //         line: "__________",
+        //         byed: "false",
+        //         id: 0
+        //     }
+        // }
+        // this.setState({ main: mass })
     }
 
 
@@ -112,9 +112,9 @@ class App extends React.Component {
             })
 
         }
-        // this.setState({ size: this.state.size + 1 })
+        this.setState({ size: this.state.size + 1 })
         mass[this.state.size + 1] = temptext
-        // this.setState({ main: mass })
+        this.setState({ main: mass })
     }
 
 

@@ -45,7 +45,7 @@ class ScrollDown extends React.Component {
                                 backgroundColor: "#ffcc00",
                                 color: "#ffffff",
 
-                            }} >
+                            }} onPress={() => Buy(item)}>
                                 <Text style={{
                                     textDecorationLine: item.byed == "true" ? "line-through" : "none"
                                 }}>
