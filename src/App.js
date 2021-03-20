@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import Footer from "./component/Footer";
 import ScrollDown from './component/ScrollDown';
 
@@ -13,49 +13,49 @@ class App extends React.Component {
 
             {
                 line: "___________1",
-                byed: "false",
+                byed: 0,
                 id: 0
             },
             {
                 line: "___________2",
-                byed: "false",
+                byed: 0,
                 id: 1
             },
             {
                 line: "___________3",
-                byed: "false",
+                byed: 0,
                 id: 2
             },
             {
                 line: "___________4",
-                byed: "false",
+                byed: 0,
                 id: 3
             },
             {
                 line: "___________5",
-                byed: "false",
+                byed: 0,
                 id: 4
             },
             {
                 line: "___________6",
-                byed: "false",
+                byed: 0,
                 id: 5
             },
             {
                 line: "___________7",
-                byed: "false",
+                byed: 0,
                 id: 6
             },
             {
                 line: "___________8",
-                byed: "false",
+                byed: 0,
                 id: 7
             },
         ],
         size: -1,
         temptext: {
             line: "__________",
-            byed: "false",
+            byed: 0,
             id: 0
         },
     }
@@ -64,42 +64,11 @@ class App extends React.Component {
         this.setState({
             temptext: {
                 line: text,
-                byed: "false",
+                byed: 0,
                 id: this.state.size + 1
             }
         })
     }
-
-
-
-
-    Buy = (newItem) => {
-        // const { main } = this.state
-        // mass = main
-        // let leto = mass.find(item => item.id == newItem.id )
-        
-        // mass[leto] = tempom
-
-        // if (mass[leto]["byed"] == "false"){ 
-        //     tempom = {
-        //         line: "__________",
-        //         byed: "true",
-        //         id: 0
-        //     }
-        // }
-        // else
-        // {
-        //     tempom = {
-        //         line: "__________",
-        //         byed: "false",
-        //         id: 0
-        //     }
-        // }
-        // this.setState({ main: mass })
-    }
-
-
-
 
     Send = () => {
         const { main, temptext } = this.state
@@ -107,7 +76,7 @@ class App extends React.Component {
         if (this.state.size === mass.length - 2) {
             mass.push({
                 line: "___________",
-                byed: "false",
+                byed: 0,
                 id: this.state.size + 2
             })
 
@@ -117,13 +86,16 @@ class App extends React.Component {
         this.setState({ main: mass })
     }
 
+    Delite = () => {
 
+
+    }
 
     render() {
         return (
             <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-                <ScrollDown mass={this.state.main} Buy={this.state.Buy}/>
-                <Footer Send={this.Send} ChangeText={this.ChangeText} /> 
+                <ScrollDown main={this.state.main} Delite={this.Delite}/>
+                <Footer Send={this.Send} ChangeText={this.ChangeText} />
             </View>
         )
     }
