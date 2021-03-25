@@ -12,42 +12,42 @@ class App extends React.Component {
         main: [
 
             {
-                line: "___________1",
+                line: "___________",
                 byed: 0,
                 id: 0
             },
             {
-                line: "___________2",
+                line: "___________",
                 byed: 0,
                 id: 1
             },
             {
-                line: "___________3",
+                line: "___________",
                 byed: 0,
                 id: 2
             },
             {
-                line: "___________4",
+                line: "___________",
                 byed: 0,
                 id: 3
             },
             {
-                line: "___________5",
+                line: "___________",
                 byed: 0,
                 id: 4
             },
             {
-                line: "___________6",
+                line: "___________",
                 byed: 0,
                 id: 5
             },
             {
-                line: "___________7",
+                line: "___________",
                 byed: 0,
                 id: 6
             },
             {
-                line: "___________8",
+                line: "___________",
                 byed: 0,
                 id: 7
             },
@@ -72,7 +72,7 @@ class App extends React.Component {
 
     Send = () => {
         const { main, temptext } = this.state
-        mass = main
+        mass = [...main]
         if (this.state.size === mass.length - 2) {
             mass.push({
                 line: "___________",
